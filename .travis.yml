@@ -22,4 +22,4 @@ after_success:
   - docker push sundarsingh/multi-server
   - docker push sundarsingh/multi-worker
 
-  # finished pushong images
+  # finished pushing images
