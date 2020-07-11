@@ -26,11 +26,18 @@ class Fib extends Component {
   }
 
   handleSubmit = async event => {
+    console.log("Submit button clicked");
     event.preventDefault();
 
     await axios.post('/api/values', {
       index: this.state.index
-    });
+    })
+    .then(response => {
+	     console.log("Success response after submit "+ response)
+     })
+     .catch(error => {
+        console.log("Error after submit " + error)
+      });
     this.setState({ index: '' });
   };
 
