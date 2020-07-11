@@ -14,8 +14,20 @@ class Fib extends Component {
   }
 
   async fetchValues() {
-    const values = await axios.get('/api/values/current');
-    this.setState({ values: values.data });
+    //const values = await axios.get('/api/values/current')
+    await axios.get('/api/values/current')
+    .then(function (response) {
+    // handle success
+
+    console.log("Response for Get current values " + JSON.stringify(response));
+
+    this.setState({ values: response.data });
+  })
+  .catch(function (error) {
+    // handle error
+    console.log("Error response for Get current values" + JSON.stringify(error));
+  });
+  //  this.setState({ values: values.data });
   }
 
   async fetchIndexes() {
