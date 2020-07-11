@@ -51,6 +51,7 @@ class Fib extends Component {
         console.log("Error after submit " + JSON.stringify(error))
       });
     this.setState({ index: '' });
+    this.componentDidMount();
   };
 
   renderSeenIndexes() {
