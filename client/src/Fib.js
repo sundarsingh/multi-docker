@@ -33,10 +33,10 @@ class Fib extends Component {
       index: this.state.index
     })
     .then(response => {
-	     console.log("Success response after submit "+ response)
+	     console.log("Success response after submit "+ JSON.stringify(response))
      })
      .catch(error => {
-        console.log("Error after submit " + error)
+        console.log("Error after submit " + JSON.stringify(error))
       });
     this.setState({ index: '' });
   };
