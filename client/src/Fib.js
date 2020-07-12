@@ -14,20 +14,9 @@ class Fib extends Component {
   }
 
   async fetchValues() {
-    //const values = await axios.get('/api/values/current')
-    await axios.get('/api/values/current')
-    .then(function (response) {
-    // handle success
+    const values = await axios.get('/api/values/current')
 
-    console.log("Response for Get current values " + JSON.stringify(response));
-
-    this.setState({ values: response.data });
-  })
-  .catch(function (error) {
-    // handle error
-    console.log("Error response for Get current values" + JSON.stringify(error));
-  });
-  //  this.setState({ values: values.data });
+    this.setState({ values: values.data });
   }
 
   async fetchIndexes() {
@@ -51,7 +40,7 @@ class Fib extends Component {
         console.log("Error after submit " + JSON.stringify(error))
       });
     this.setState({ index: '' });
-    this.componentDidMount();
+    //this.componentDidMount();
   };
 
   renderSeenIndexes() {
